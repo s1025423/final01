@@ -13,6 +13,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Ink;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace WpfApplication1
 {
@@ -21,18 +23,118 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
+      
         public MainWindow()
         {
             InitializeComponent();
             mydraw = this.ink1;
-        }
-
-        public InkCanvas mydraw;
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            var fullFilePath = @"C:\Study\th.jpg";
+            var fullFilePath = @"C:\Study\人機介面\教材\DTUI5_chap14\投影片1.JPG";
 
             FileInfo fi = new FileInfo(fullFilePath);
+
+
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(fullFilePath, UriKind.Absolute);
+            bitmap.EndInit();
+
+            image1.Source = bitmap;
+
+            
+
+        }
+       
+
+        
+
+        public InkCanvas mydraw;
+        
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            mydraw.EditingMode = InkCanvasEditingMode.Ink;
+            DrawingAttributes da = new DrawingAttributes();
+            da.Color = Colors.Black;
+            da.Width = 1;
+            mydraw.DefaultDrawingAttributes = da;
+        }
+             private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            mydraw.EditingMode = InkCanvasEditingMode.Ink;
+            DrawingAttributes da = new DrawingAttributes();
+            da.Color = Colors.Red;
+            da.Width = 10;
+            mydraw.DefaultDrawingAttributes = da;
+        }
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            mydraw.EditingMode = InkCanvasEditingMode.Ink;
+            DrawingAttributes da = new DrawingAttributes();
+            da.Color = Colors.Red;
+            da.Width = 1;
+            mydraw.DefaultDrawingAttributes = da;
+        }
+            private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            mydraw.EditingMode = InkCanvasEditingMode.Ink;
+            DrawingAttributes da = new DrawingAttributes();
+            da.Color = Colors.Green;
+            da.Width = 10;
+            mydraw.DefaultDrawingAttributes = da;
+        }
+            private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            mydraw.EditingMode = InkCanvasEditingMode.Ink;
+            DrawingAttributes da = new DrawingAttributes();
+            da.Color = Colors.Green;
+            da.Width = 1;
+            mydraw.DefaultDrawingAttributes = da;
+        }
+
+        
+
+       
+
+        
+
+        
+
+        
+
+            private void button6_Click(object sender, RoutedEventArgs e)
+        {
+            mydraw.EditingMode = InkCanvasEditingMode.EraseByStroke;
+        }
+
+            private void button7_Click(object sender, RoutedEventArgs e)
+        {
+            mydraw.EditingMode = InkCanvasEditingMode.EraseByPoint;
+        }
+
+        
+
+            private void button8_Click(object sender, RoutedEventArgs e)
+        {
+            var fullFilePath = @"C:\Study\人機介面\教材\DTUI5_chap14\投影片2.JPG";
+
+            FileInfo fi = new FileInfo(fullFilePath);
+
+
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(fullFilePath, UriKind.Absolute);
+            bitmap.EndInit();
+
+            image1.Source = bitmap;
+
+     }
+            private void button9_Click(object sender, RoutedEventArgs e)
+        {
+
+            var fullFilePath = @"C:\Study\人機介面\教材\DTUI5_chap14\投影片3.JPG";
+
+            FileInfo fi = new FileInfo(fullFilePath);
+
 
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
@@ -43,82 +145,12 @@ namespace WpfApplication1
             
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            mydraw.EditingMode = InkCanvasEditingMode.Ink;
-            DrawingAttributes da = new DrawingAttributes();
-            da.Color = Colors.Black;
-            da.Width = 10;
-            mydraw.DefaultDrawingAttributes = da;
-        }
+        private void ink1_Gesture(object sender, InkCanvasGestureEventArgs e)
+{
 
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            mydraw.EditingMode = InkCanvasEditingMode.Ink;
-            DrawingAttributes da = new DrawingAttributes();
-            da.Color = Colors.Yellow;
-            da.Width = 5;
-            mydraw.DefaultDrawingAttributes = da;
-        }
-
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            mydraw.EditingMode = InkCanvasEditingMode.Ink;
-            DrawingAttributes da = new DrawingAttributes();
-            da.Color = Colors.Red;
-            da.Width = 1;
-            mydraw.DefaultDrawingAttributes = da;
-        }
-
-        private void button5_Click(object sender, RoutedEventArgs e)
-        {
-            mydraw.EditingMode = InkCanvasEditingMode.Ink;
-            DrawingAttributes da = new DrawingAttributes();
-            da.Color = Colors.Green;
-            da.Width = 10;
-            mydraw.DefaultDrawingAttributes = da;
-        }
-
-        private void button6_Click(object sender, RoutedEventArgs e)
-        {
-            mydraw.EditingMode = InkCanvasEditingMode.Ink;
-            DrawingAttributes da = new DrawingAttributes();
-            da.Color = Colors.Blue;
-            da.Width = 10;
-            mydraw.DefaultDrawingAttributes = da;
-        }
-
-        private void button7_Click(object sender, RoutedEventArgs e)
-        {
-            mydraw.EditingMode = InkCanvasEditingMode.Ink;
-            DrawingAttributes da = new DrawingAttributes();
-            da.Color = Colors.Purple;
-            da.Width = 10;
-            mydraw.DefaultDrawingAttributes = da;
-        }
-
-        private void button8_Click(object sender, RoutedEventArgs e)
-        {
-            mydraw.EditingMode = InkCanvasEditingMode.Ink;
-            DrawingAttributes da = new DrawingAttributes();
-            da.Color = Colors.Gray;
-            da.Width = 10;
-            mydraw.DefaultDrawingAttributes = da;
-        }
-
-        private void button9_Click(object sender, RoutedEventArgs e)
-        {
-            mydraw.EditingMode = InkCanvasEditingMode.Select;
-        }
-
-        private void button10_Click(object sender, RoutedEventArgs e)
-        {
-            mydraw.EditingMode = InkCanvasEditingMode.EraseByStroke;
-        }
-
-        private void button11_Click(object sender, RoutedEventArgs e)
-        {
-            mydraw.EditingMode = InkCanvasEditingMode.EraseByPoint;
+}
+       
         }
     }
-}
+
+

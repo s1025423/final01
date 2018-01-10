@@ -38,6 +38,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -91,6 +93,70 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\erase2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\erase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\th.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\paint.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\投影片1.JPG" />
+    <Resource Include="Images\投影片10.JPG" />
+    <Resource Include="Images\投影片11.JPG" />
+    <Resource Include="Images\投影片12.JPG" />
+    <Resource Include="Images\投影片13.JPG" />
+    <Resource Include="Images\投影片14.JPG" />
+    <Resource Include="Images\投影片15.JPG" />
+    <Resource Include="Images\投影片16.JPG" />
+    <Resource Include="Images\投影片17.JPG" />
+    <Resource Include="Images\投影片18.JPG" />
+    <Resource Include="Images\投影片19.JPG" />
+    <Resource Include="Images\投影片2.JPG" />
+    <Resource Include="Images\投影片20.JPG" />
+    <Resource Include="Images\投影片21.JPG" />
+    <Resource Include="Images\投影片22.JPG" />
+    <Resource Include="Images\投影片23.JPG" />
+    <Resource Include="Images\投影片3.JPG" />
+    <Resource Include="Images\投影片4.JPG" />
+    <Resource Include="Images\投影片5.JPG" />
+    <Resource Include="Images\投影片6.JPG" />
+    <Resource Include="Images\投影片7.JPG" />
+    <Resource Include="Images\投影片8.JPG" />
+    <Resource Include="Images\投影片9.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\左.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\右.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\paint3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\paint4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pain01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\paint02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\red-pencil-clipart.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\green-pencil-clipart.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
